@@ -1,8 +1,6 @@
 module Telekrug
   module Workers
-    class ProcessMessageWorker
-      include Sidekiq::Worker
-
+    class ProcessMessageWorker < Base
       def perform(message_dump)
         message = YAML.load(message_dump)
         Models::User.find_or_create(telegram_id: message.from.id)
