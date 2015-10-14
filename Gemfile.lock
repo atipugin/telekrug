@@ -73,6 +73,8 @@ GEM
       ruby-progressbar (~> 1.4)
     ruby-progressbar (1.7.5)
     sequel (4.27.0)
+    sequel_enum (0.0.1)
+      sequel
     sidekiq (3.5.1)
       celluloid (~> 0.17.2)
       connection_pool (~> 2.2, >= 2.2.0)
@@ -109,6 +111,7 @@ DEPENDENCIES
   pg
   rubocop
   sequel
+  sequel_enum
   sidekiq
   sinatra
   telegram-bot-ruby
