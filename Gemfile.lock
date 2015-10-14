@@ -50,6 +50,7 @@ GEM
     persistent_httparty (0.1.2)
       httparty (~> 0.9)
       persistent_http (< 2)
+    pg (0.18.3)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -57,6 +58,7 @@ GEM
     redis (3.2.1)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
+    sequel (4.27.0)
     sidekiq (3.5.1)
       celluloid (~> 0.17.2)
       connection_pool (~> 2.2, >= 2.2.0)
@@ -90,6 +92,8 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv
+  pg
+  sequel
   sidekiq
   sinatra
   telegram-bot-ruby
