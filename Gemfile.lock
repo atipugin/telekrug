@@ -5,14 +5,33 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
+    celluloid (0.17.2)
+      celluloid-essentials
+      celluloid-extras
+      celluloid-fsm
+      celluloid-pool
+      celluloid-supervision
+      timers (>= 4.1.1)
+    celluloid-essentials (0.20.5)
+      timers (>= 4.1.1)
+    celluloid-extras (0.20.5)
+      timers (>= 4.1.1)
+    celluloid-fsm (0.20.5)
+      timers (>= 4.1.1)
+    celluloid-pool (0.20.5)
+      timers (>= 4.1.1)
+    celluloid-supervision (0.20.5)
+      timers (>= 4.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
+    connection_pool (2.2.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     dotenv (2.0.2)
     equalizer (0.0.11)
     gene_pool (1.4.1)
       thread_safe
+    hitimes (1.2.3)
     httmultiparty (0.3.16)
       httparty (>= 0.7.3)
       mimemagic
@@ -35,6 +54,15 @@ GEM
     rack-protection (1.5.3)
       rack
     raindrops (0.15.0)
+    redis (3.2.1)
+    redis-namespace (1.5.2)
+      redis (~> 3.0, >= 3.0.4)
+    sidekiq (3.5.1)
+      celluloid (~> 0.17.2)
+      connection_pool (~> 2.2, >= 2.2.0)
+      json (~> 1.0)
+      redis (~> 3.2, >= 3.2.1)
+      redis-namespace (~> 1.5, >= 1.5.2)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -45,6 +73,8 @@ GEM
       virtus
     thread_safe (0.3.5)
     tilt (2.0.1)
+    timers (4.1.1)
+      hitimes
     unicorn (4.9.0)
       kgio (~> 2.6)
       rack
@@ -60,6 +90,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv
+  sidekiq
   sinatra
   telegram-bot-ruby
   unicorn
