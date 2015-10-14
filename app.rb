@@ -11,7 +11,7 @@ BOT = Telegram::Bot::Client.new(ENV['TELEGRAM_BOT_TOKEN'])
 ROOT = Pathname.new(File.expand_path('../', __FILE__))
 DB = Sequel.connect(ENV['DATABASE_URL'])
 
-$: << ROOT.to_s
+$LOAD_PATH << ROOT.to_s
 
 require 'app/workers'
 require 'app/models'

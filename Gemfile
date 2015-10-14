@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gem 'dotenv'
 gem 'pg'
+gem 'rubocop'
 gem 'sequel'
 gem 'sidekiq'
 gem 'sinatra'
