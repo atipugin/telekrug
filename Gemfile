@@ -4,4 +4,5 @@ source 'https://rubygems.org'
 
 gem 'dotenv'
 gem 'sinatra'
+gem 'telegram-bot-ruby'
 gem 'unicorn'
