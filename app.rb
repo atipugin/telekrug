@@ -15,13 +15,10 @@ $LOAD_PATH << ROOT.to_s
 
 require 'app/workers'
 require 'app/models'
+require 'app/routes'
 
 module Telekrug
   class App < Sinatra::Application
-    post "/#{ENV['TELEGRAM_BOT_TOKEN']}" do
-      request.body.rewind
-      update = Telegram::Bot::Types::Update.new(JSON.parse(request.body.read))
-      Workers::ProcessMessageWorker.perform_async(YAML.dump(update.message))
-    end
+    use Telekrug::Routes::Bot
   end
 end
