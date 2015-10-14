@@ -3,8 +3,23 @@ module Telekrug
     class ProcessMessageWorker < Base
       def perform(message_dump)
         message = YAML.load(message_dump)
-        Telekrug::Models::User.find_or_create(telegram_id: message.from.id)
-        BOT.api.send_message(chat_id: message.from.id, text: 'Hello!')
+        command = command_klass(message.text)
+        return unless command
+
+        user =
+          Telekrug::Models::User.find_or_create(telegram_id: message.from.id)
+        command.execute(message, user)
+      end
+
+      private
+
+      def command_klass(text)
+        case text
+        when '/start'
+          Telekrug::Commands::Start
+        when '/stop'
+          Telekrug::Commands::Stop
+        end
       end
     end
   end

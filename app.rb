@@ -16,6 +16,7 @@ $LOAD_PATH << ROOT.to_s
 require 'app/workers'
 require 'app/models'
 require 'app/routes'
+require 'app/commands'
 
 module Telekrug
   class App < Sinatra::Application
