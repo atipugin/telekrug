@@ -28,6 +28,8 @@ module Telekrug
           Telekrug::Commands::Stop
         when '/cancel'
           Telekrug::Commands::Cancel
+        when %r{^\/subscribe}
+          Telekrug::Commands::Subscribe
         end
       end
     end
