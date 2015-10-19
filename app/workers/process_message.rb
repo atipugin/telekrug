@@ -1,6 +1,6 @@
 module Telekrug
   module Workers
-    class ProcessMessageWorker < Base
+    class ProcessMessage < Base
       def perform(message_dump)
         message = YAML.load(message_dump)
         user =

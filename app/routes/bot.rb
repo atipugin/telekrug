@@ -4,7 +4,7 @@ module Telekrug
       post "/#{ENV['TELEGRAM_BOT_TOKEN']}" do
         request.body.rewind
         update = Telegram::Bot::Types::Update.new(JSON.parse(request.body.read))
-        Telekrug::Workers::ProcessMessageWorker
+        Telekrug::Workers::ProcessMessage
           .perform_async(YAML.dump(update.message))
       end
     end
